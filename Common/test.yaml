@@ -1,0 +1,23 @@
+- action: "request"
+  cmdtype: 532
+  sequence: 1
+  token: ""
+  message:
+    type: 5
+    value: 500
+
+- action: "request"
+  cmdtype: 532
+  sequence: 1
+  token: ""
+  message:
+    type: 7
+    value: 500
+
+- action: "request"
+  cmdtype: 532
+  sequence: 1
+  token: ""
+  message:
+    type: 6
+    value: 500

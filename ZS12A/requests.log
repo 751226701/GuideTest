@@ -1,0 +1,5 @@
+2024-07-16 08:34:17,411 - INFO - Received POST request
+ - Path: /admin-api/infra/file/uploadWarnFile
+ - Method: POST
+ - Data: ImmutableMultiDict([('alarm_id', '1164624018284875777'), ('device_id', '1164624018284875777'), ('preset_id', '1'), ('rule_id', '2'), ('file_type', '2'), ('channel_type', '2'), ('file', 'D:\\testData\\file\\testFile.png'), ('file_name', 'testFile.png')])
+2024-07-16 08:34:17,420 - INFO - 192.168.21.111 - - [16/Jul/2024 08:34:17] "POST /admin-api/infra/file/uploadWarnFile HTTP/1.1" 200 -
