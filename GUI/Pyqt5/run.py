@@ -7,7 +7,6 @@ from time import sleep
 import base64
 import numpy as np
 from datetime import datetime
-import requests
 import sys
 
 # 设置日志记录配置
@@ -25,7 +24,7 @@ MAXTEMP = 99 * 100
 MINTEMP = 99 * 100
 
 class Test(object):
-    def __init__(self, url, maxtemp, mintemp, width, height, output_callback):
+    def __init__(self, url, maxtemp, mintemp, width, height, dtype, output_callback):
         self.url = "ws://" + url + ":9980/api/v1/control"
         self.urls = url
         self.ws = None
@@ -48,6 +47,7 @@ class Test(object):
         self.mintemp = mintemp
         self.width = width
         self.height = height
+        self.dtype = dtype
         self.output_callback = output_callback
 
     def on_open(self, ws):
@@ -71,7 +71,6 @@ class Test(object):
             else:
                 temp = response['message']['temps']
                 self.getTemp(temp)
-                self.matrix = self.getMatrix(temp)
 
     def on_error(self, ws, error):
         print("Error:\n")
@@ -136,15 +135,10 @@ class Test(object):
         self.is_running = False
         self.ws.close()
 
-    def getMatrix(self, temp):
-        decode_byte_temp = base64.b64decode(temp)
-        short_temp = np.frombuffer(decode_byte_temp, dtype=np.int16).astype(np.int16)
-        return short_temp
-
     def getTemp(self, temp):
         global count_below, count_above, temp_counts
         decode_byte_temp = base64.b64decode(temp)
-        short_temp = np.frombuffer(decode_byte_temp, dtype=np.int32).astype(np.int32)
+        short_temp = np.frombuffer(decode_byte_temp, dtype=self.dtype).astype(self.dtype)
         maxtemp = short_temp[0]
         mintemp = short_temp[0]
 
@@ -166,7 +160,6 @@ class Test(object):
                        f"{current_time} 高于{self.maxtemp / 100}的温度次数：{count_above}\n"
                        f"{current_time} 低于{self.mintemp / 100}的温度次数：{count_below}\n\n")
 
-        print(output_text)
         self.output_callback(output_text)
 
         logger.info(output_text)
@@ -221,17 +214,28 @@ class Ui_MainWindow(object):
         self.lineEdit_5.setObjectName("lineEdit_5")
         self.gridLayout.addWidget(self.lineEdit_5, 4, 1, 1, 1)
 
+        self.label_6 = QtWidgets.QLabel(self.centralwidget)
+        self.label_6.setObjectName("label_6")
+        self.gridLayout.addWidget(self.label_6, 5, 0, 1, 1)
+
+        self.comboBox = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox.addItem("int16")
+        self.comboBox.addItem("int32")
+        self.comboBox.setCurrentText("int32")
+        self.comboBox.setObjectName("comboBox")
+        self.gridLayout.addWidget(self.comboBox, 5, 1, 1, 1)
+
         self.pushButton_start = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_start.setObjectName("pushButton_start")
-        self.gridLayout.addWidget(self.pushButton_start, 5, 0, 1, 2)
+        self.gridLayout.addWidget(self.pushButton_start, 6, 0, 1, 2)
 
         self.pushButton_stop = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_stop.setObjectName("pushButton_stop")
-        self.gridLayout.addWidget(self.pushButton_stop, 6, 0, 1, 2)
+        self.gridLayout.addWidget(self.pushButton_stop, 7, 0, 1, 2)
 
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
         self.textEdit.setObjectName("textEdit")
-        self.gridLayout.addWidget(self.textEdit, 7, 0, 1, 2)
+        self.gridLayout.addWidget(self.textEdit, 8, 0, 1, 2)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -243,12 +247,13 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "温度监控"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "GetTemp"))
         self.label_1.setText(_translate("MainWindow", "设备IP地址："))
         self.label_2.setText(_translate("MainWindow", "高温阈值："))
         self.label_3.setText(_translate("MainWindow", "低温阈值："))
         self.label_4.setText(_translate("MainWindow", "图像宽度："))
         self.label_5.setText(_translate("MainWindow", "图像高度："))
+        self.label_6.setText(_translate("MainWindow", "数据类型："))
         self.pushButton_start.setText(_translate("MainWindow", "开始测试"))
         self.pushButton_stop.setText(_translate("MainWindow", "停止测试"))
 
@@ -258,8 +263,9 @@ class Ui_MainWindow(object):
         mintemp = int(self.lineEdit_3.text()) * 100
         width = int(self.lineEdit_4.text())
         height = int(self.lineEdit_5.text())
+        dtype = np.int16 if self.comboBox.currentText() == 'int16' else np.int32
 
-        self.test = Test(url, maxtemp, mintemp, width, height, self.update_output)
+        self.test = Test(url, maxtemp, mintemp, width, height, dtype, self.update_output)
         self.test_thread = threading.Thread(target=self.test.start_connect)
         self.test_thread.start()
 
