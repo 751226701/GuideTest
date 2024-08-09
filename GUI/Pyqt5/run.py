@@ -15,13 +15,9 @@ logging.basicConfig(filename='output.log', level=logging.INFO,
 # 创建一个日志记录器
 logger = logging.getLogger("my_logger")
 
-IMAGE_WIDTH = 640
-IMAGE_HEIGHT = 512
 count_above = 0
 count_below = 0
 temp_counts = 0
-MAXTEMP = 99 * 100
-MINTEMP = 99 * 100
 
 class Test(object):
     def __init__(self, url, maxtemp, mintemp, width, height, dtype, output_callback):

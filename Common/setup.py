@@ -4,7 +4,7 @@ setup(
     name="YourScript",
     version="1.0",
     description="Description of Your Script",
-    executables=[Executable(r"finance.py")],
+    executables=[Executable(r"D:\APP\pycharm\project\GuideTest\GUI\Pyqt5\run.py")],
 
 )
 
