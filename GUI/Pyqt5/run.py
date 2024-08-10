@@ -254,16 +254,38 @@ class Ui_MainWindow(object):
         self.pushButton_stop.setText(_translate("MainWindow", "停止测试"))
 
     def start_test(self):
-        url = self.lineEdit_1.text()
-        maxtemp = int(self.lineEdit_2.text()) * 100
-        mintemp = int(self.lineEdit_3.text()) * 100
-        width = int(self.lineEdit_4.text())
-        height = int(self.lineEdit_5.text())
-        dtype = np.int16 if self.comboBox.currentText() == 'int16' else np.int32
+        try:
+            url = self.lineEdit_1.text().strip()
+            maxtemp_text = self.lineEdit_2.text().strip()
+            mintemp_text = self.lineEdit_3.text().strip()
+            width_text = self.lineEdit_4.text().strip()
+            height_text = self.lineEdit_5.text().strip()
 
-        self.test = Test(url, maxtemp, mintemp, width, height, dtype, self.update_output)
-        self.test_thread = threading.Thread(target=self.test.start_connect)
-        self.test_thread.start()
+            if not url:
+                raise ValueError("设备IP地址不能为空")
+            if not maxtemp_text or not mintemp_text or not width_text or not height_text:
+                raise ValueError("所有输入字段都必须填写")
+
+            try:
+                maxtemp = int(maxtemp_text) * 100
+                mintemp = int(mintemp_text) * 100
+                width = int(width_text)
+                height = int(height_text)
+            except ValueError:
+                raise ValueError("高温阈值、低温阈值、图像宽度和图像高度必须是有效的整数")
+
+            if width <= 0 or height <= 0:
+                raise ValueError("图像宽度和高度必须大于0")
+
+            dtype = np.int16 if self.comboBox.currentText() == 'int16' else np.int32
+
+            self.test = Test(url, maxtemp, mintemp, width, height, dtype, self.update_output)
+            self.test_thread = threading.Thread(target=self.test.start_connect)
+            self.test_thread.start()
+        except ValueError as e:
+            QtWidgets.QMessageBox.warning(self.centralwidget, "输入错误", str(e))
+        except Exception as e:
+            QtWidgets.QMessageBox.critical(self.centralwidget, "未知错误", f"发生了未知错误: {str(e)}")
 
     def stop_test(self):
         if hasattr(self, 'test'):
