@@ -20,7 +20,7 @@ class LivePlot:
 
         self.ani = animation.FuncAnimation(
             self.fig, self.update, init_func=self.init, frames=None,
-            interval=interval, repeat=False, save_count=99999
+            interval=interval, repeat=False
         )
 
     def init(self):
@@ -57,5 +57,5 @@ def random_data():
     return np.random.randint(20, 61)
 
 if __name__ == '__main__':
-    plot = LivePlot(data_generator=random_data, interval=1000)
+    plot = LivePlot(data_generator=random_data, interval=200)
     plot.show()
