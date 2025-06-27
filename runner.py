@@ -24,11 +24,9 @@ if __name__ == '__main__':
     AllureReport = Config.test_report_dir
     AllureResult = Config.test_result_dir
     Screenshot = Config.test_screenshot_dir
-    Download = Config.test_download_dir
 
-    # 清理截图和下载目录中指定格式文件
+    # 清理截图
     clean_dir(Screenshot, ['*.png'])
-    clean_dir(Download, ['*.jpg', '*.mp4'])
 
     # 执行用例生成测试结果
     pytest.main(["-v", "-s", "-p no:warnings",f'--alluredir={AllureResult}', "--clean-alluredir"])

@@ -9,6 +9,7 @@ import logging
 import allure
 import psutil
 from airtest.core.api import *
+from Config.Config import Config
 logging.getLogger("airtest").setLevel(logging.WARNING)
 
 
@@ -22,9 +23,10 @@ def gui_app():
         with allure.step("启动应用"):
             start_app(app_path)
             time.sleep(5)  # 等待稳定
-            snapshot(r"TestReport\Screenshot\app_launch.png")
-            allure.attach.file(r"TestReport\Screenshot\app_launch.png", name="应用启动截图",
-                               attachment_type=allure.attachment_type.PNG)
+            snapshot_name = "app_launch.png"
+            snapshot_path = os.path.join(Config.test_screenshot_dir, snapshot_name)
+            snapshot(snapshot_path)
+            allure.attach.file(snapshot_path, name="应用启动截图",attachment_type=allure.attachment_type.PNG)
 
         yield  # 测试执行
 
@@ -32,9 +34,10 @@ def gui_app():
         # 无论测试成功/失败，最后关闭应用
         with allure.step("关闭应用"):
             kill_process_by_name("HyperBrain.exe")
-            snapshot(r"TestReport\Screenshot\app_exit.png")
-            allure.attach.file(r"TestReport\Screenshot\app_exit.png", name="应用退出截图",
-                               attachment_type=allure.attachment_type.PNG)
+            snapshot_name = "app_exit.png"
+            snapshot_path = os.path.join(Config.test_screenshot_dir, snapshot_name)
+            snapshot(snapshot_path)
+            allure.attach.file(snapshot_path, name="应用退出截图",attachment_type=allure.attachment_type.PNG)
 
 
 def kill_process_by_name(process_name):
@@ -54,10 +57,10 @@ def pytest_runtest_makereport(item, call):
         # 生成唯一文件名：用例名 + 时间戳
         timestamp = time.strftime("%Y%m%d_%H%M%S")
         screenshot_name = f"{item.name}_fail_{timestamp}.png"
-        screenshot_path = os.path.join("TestReport\Screenshot", screenshot_name)
+        screenshot_path = os.path.join(Config.test_screenshot_dir, screenshot_name)
 
         # 确保目录存在
-        os.makedirs("TestReport\Screenshot", exist_ok=True)
+        os.makedirs(Config.test_screenshot_dir, exist_ok=True)
 
         # 截图并附加到Allure
         snapshot(screenshot_path)
