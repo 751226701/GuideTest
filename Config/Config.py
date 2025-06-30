@@ -8,7 +8,8 @@
 import os
 class Config:
     # 项目地址
-    APP_PATH = r"D:\app\Hyperion\Hyper Brain WELD\HBLicenseMain.exe"
+    APP_PATH = r"D:\app\Hyperion\Hyperion\Hyper Brain WELD\HBLicenseMain.exe"
+    APP_NAME = "HyperBrain.exe"
 
     # 项目根目录
     root_dir = os.path.split(os.path.split(__file__)[0])[0]
@@ -26,4 +27,7 @@ if __name__ == '__main__':
     print(Config.root_dir)
     print(Config.test_cases_dir)
     print(Config.test_download_dir)
+    print(os.path.split(__file__))
+    print(os.path.split(os.path.split(__file__)[0]))
+
 

@@ -10,7 +10,6 @@ import time
 import pytest
 from Config.Config import Config
 from Common.ReadYaml import ReadYaml
-from Common.Common import Common
 from Common.AllurePretty import PrettyAllure
 from Pages.Engineer import Engineer
 yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml"))

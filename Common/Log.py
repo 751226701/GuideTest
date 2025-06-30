@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 # @author: 刘涛
 # @time: 2025/6/24 11:03
-# @file: log.py
+# @file: Log.py
 # @project: EAI 2.0 GUI_TEST
 
 import os
@@ -114,9 +114,17 @@ class Logger:
         message = f"{self._get_caller_info()} - {msg}"
         self.error_logger.critical(message, *args, **kwargs)
 
+_logger_instance = None
+
+def get_logger():
+    global _logger_instance
+    if _logger_instance is None:
+        _logger_instance = Logger()
+    return _logger_instance
+
 
 if __name__ == "__main__":
-    log = Logger()
+    log = get_logger()
     log.debug("调试信息")
     log.info("一般信息")
     log.warning("警告信息")

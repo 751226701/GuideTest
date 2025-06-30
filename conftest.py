@@ -10,18 +10,18 @@ import allure
 import psutil
 from airtest.core.api import *
 from Config.Config import Config
+from Config.Config import Config
 logging.getLogger("airtest").setLevel(logging.WARNING)
 
 
 @pytest.fixture(scope="class")
 def gui_app():
     auto_setup(__file__, logdir=False, devices=["Windows:///"])
-    app_path = r"D:\app\Hyperion\Hyper Brain WELD\HBLicenseMain.exe"
-    kill_process_by_name("HyperBrain.exe")
+    kill_process_by_name(Config.APP_NAME)
 
     try:
         with allure.step("启动应用"):
-            start_app(app_path)
+            start_app(Config.APP_PATH)
             time.sleep(5)  # 等待稳定
             snapshot_name = "app_launch.png"
             snapshot_path = os.path.join(Config.test_screenshot_dir, snapshot_name)
@@ -33,7 +33,7 @@ def gui_app():
     finally:
         # 无论测试成功/失败，最后关闭应用
         with allure.step("关闭应用"):
-            kill_process_by_name("HyperBrain.exe")
+            kill_process_by_name(Config.APP_NAME)
             snapshot_name = "app_exit.png"
             snapshot_path = os.path.join(Config.test_screenshot_dir, snapshot_name)
             snapshot(snapshot_path)
