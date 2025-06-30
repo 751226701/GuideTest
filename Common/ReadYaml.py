@@ -4,7 +4,6 @@
 # @time: 2025/6/24 11:11
 # @file: ReadYaml.py
 # @project: EAI 2.0 GUI_TEST
-
 import yaml
 import os
 from Config.Config import Config

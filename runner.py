@@ -4,7 +4,6 @@
 # @time: 2025/6/24 16:08
 # @file: runner.py
 # @project: EAI 2.0 GUI_TEST
-
 import os
 import glob
 import pytest

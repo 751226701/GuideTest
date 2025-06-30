@@ -4,7 +4,6 @@
 # @time: 2025/6/23 16:05
 # @file: AllurePretty.py
 # @project: EAI 2.0 GUI_TEST
-
 import os
 import allure
 import pytest
@@ -36,7 +35,6 @@ class PrettyAllure:
         snapshot(filename)
         allure.attach.file(source = filename,name = "用例完成截图",
             attachment_type=allure.attachment_type.PNG)
-
 
     @classmethod
     def PrettyAllureWrapper(cls, func):

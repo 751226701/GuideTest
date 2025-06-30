@@ -4,7 +4,6 @@
 # @time: 2025/6/24 14:05
 # @file: Config.py
 # @project: EAI 2.0 GUI_TEST
-
 import os
 class Config:
     # 项目地址
