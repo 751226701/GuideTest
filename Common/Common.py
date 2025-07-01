@@ -70,94 +70,90 @@ class Common:
         self.logger.log(log_entry)
 
     def wait_and_touch(self, image_path, operation="", timeout=10, **kwargs):
-        with allure.step(operation):
-            self.step_counter += 1
-            start_time = time.perf_counter()
+        self.step_counter += 1
+        start_time = time.perf_counter()
 
-            try:
-                tpl = Template(
-                    image_path,
-                    threshold=kwargs.get("threshold", self.threshold),
-                    record_pos=kwargs.get("record_pos"),
-                    resolution=kwargs.get("resolution", self.resolution),
-                    rgb=kwargs.get("rgb", self.rgb),
-                    target_pos=kwargs.get("target_pos", self.target_pos)
-                )
-                pos = wait(tpl, timeout=timeout)
-                touch(pos)
+        try:
+            tpl = Template(
+                image_path,
+                threshold=kwargs.get("threshold", self.threshold),
+                record_pos=kwargs.get("record_pos"),
+                resolution=kwargs.get("resolution", self.resolution),
+                rgb=kwargs.get("rgb", self.rgb),
+                target_pos=kwargs.get("target_pos", self.target_pos)
+            )
+            pos = wait(tpl, timeout=timeout)
+            touch(pos)
 
-                duration = (time.perf_counter() - start_time) * 1000
-                self._log_operation(operation, "SUCCESS", duration)
-                return duration
+            duration = (time.perf_counter() - start_time) * 1000
+            self._log_operation(operation, "SUCCESS", duration)
+            return duration
 
-            except Exception as e:
-                duration = (time.perf_counter() - start_time) * 1000
-                self._log_operation(operation, "FAILED", duration, str(e))
-                raise
+        except Exception as e:
+            duration = (time.perf_counter() - start_time) * 1000
+            self._log_operation(operation, "FAILED", duration, str(e))
+            raise
 
     def swipe(self, start_pos, end_pos, operation="", duration=0.5):
-        with allure.step(operation):
-            self.step_counter += 1
-            start_time = time.perf_counter()
+        self.step_counter += 1
+        start_time = time.perf_counter()
 
-            try:
-                swipe(start_pos, end_pos, duration=duration)
-                op_duration = (time.perf_counter() - start_time) * 1000
-                self._log_operation(operation, "SUCCESS", op_duration)
-                return op_duration
-            except Exception as e:
-                op_duration = (time.perf_counter() - start_time) * 1000
-                self._log_operation(operation, "FAILED", op_duration, str(e))
-                raise
+        try:
+            swipe(start_pos, end_pos, duration=duration)
+            op_duration = (time.perf_counter() - start_time) * 1000
+            self._log_operation(operation, "SUCCESS", op_duration)
+            return op_duration
+        except Exception as e:
+            op_duration = (time.perf_counter() - start_time) * 1000
+            self._log_operation(operation, "FAILED", op_duration, str(e))
+            raise
 
     def input_text(self, image_path, text, operation="", timeout=10, **kwargs):
-        with allure.step(operation):
-            self.step_counter += 1
-            start_time = time.perf_counter()
+        self.step_counter += 1
+        start_time = time.perf_counter()
 
-            try:
-                tpl = Template(
-                    image_path,
-                    threshold=kwargs.get("threshold", self.threshold),
-                    record_pos=kwargs.get("record_pos"),
-                    resolution=kwargs.get("resolution", self.resolution),
-                    rgb=kwargs.get("rgb", self.rgb),
-                    target_pos=kwargs.get("target_pos", self.target_pos)
-                )
-                pos = wait(tpl, timeout=timeout)
-                touch(pos)
-                text(str(text), enter=False)
+        try:
+            tpl = Template(
+                image_path,
+                threshold=kwargs.get("threshold", self.threshold),
+                record_pos=kwargs.get("record_pos"),
+                resolution=kwargs.get("resolution", self.resolution),
+                rgb=kwargs.get("rgb", self.rgb),
+                target_pos=kwargs.get("target_pos", self.target_pos)
+            )
+            pos = wait(tpl, timeout=timeout)
+            touch(pos)
+            text(str(text), enter=False)
 
-                duration = (time.perf_counter() - start_time) * 1000
-                self._log_operation(operation, "SUCCESS", duration)
-                return duration
-            except Exception as e:
-                duration = (time.perf_counter() - start_time) * 1000
-                self._log_operation(operation, "FAILED", duration, str(e))
-                raise
+            duration = (time.perf_counter() - start_time) * 1000
+            self._log_operation(operation, "SUCCESS", duration)
+            return duration
+        except Exception as e:
+            duration = (time.perf_counter() - start_time) * 1000
+            self._log_operation(operation, "FAILED", duration, str(e))
+            raise
 
     def assert_exists(self, image_path, operation="", timeout=10, **kwargs):
-        with allure.step(operation):
-            self.step_counter += 1
-            start_time = time.perf_counter()
+        self.step_counter += 1
+        start_time = time.perf_counter()
 
-            try:
-                tpl = Template(
-                    image_path,
-                    threshold=kwargs.get("threshold", self.threshold),
-                    record_pos=kwargs.get("record_pos"),
-                    resolution=kwargs.get("resolution", self.resolution),
-                    rgb=kwargs.get("rgb", self.rgb),
-                    target_pos=kwargs.get("target_pos", self.target_pos)
-                )
-                wait(tpl, timeout=timeout)
-                duration = (time.perf_counter() - start_time) * 1000
-                self._log_operation(operation, "ASSERT_PASS", duration)
-                return duration
-            except Exception as e:
-                duration = (time.perf_counter() - start_time) * 1000
-                self._log_operation(operation, "ASSERT_FAIL", duration, str(e))
-                raise AssertionError(f"元素不存在: {image_path}")
+        try:
+            tpl = Template(
+                image_path,
+                threshold=kwargs.get("threshold", self.threshold),
+                record_pos=kwargs.get("record_pos"),
+                resolution=kwargs.get("resolution", self.resolution),
+                rgb=kwargs.get("rgb", self.rgb),
+                target_pos=kwargs.get("target_pos", self.target_pos)
+            )
+            wait(tpl, timeout=timeout)
+            duration = (time.perf_counter() - start_time) * 1000
+            self._log_operation(operation, "ASSERT_PASS", duration)
+            return duration
+        except Exception as e:
+            duration = (time.perf_counter() - start_time) * 1000
+            self._log_operation(operation, "ASSERT_FAIL", duration, str(e))
+            raise AssertionError(f"元素不存在: {image_path}")
 
     def __del__(self):
         """析构时确保日志线程安全退出"""
