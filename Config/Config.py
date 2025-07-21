@@ -7,7 +7,7 @@
 import os
 class Config:
     # 项目地址
-    APP_PATH = r"D:\app\Hyperion\Hyperion\Hyper Brain WELD\HBLicenseMain.exe"
+    APP_PATH = r"D:\Hyperion\Hyper Brain WELD\HBLicenseMain.exe"
     APP_NAME = "HyperBrain.exe"
 
     # 项目根目录

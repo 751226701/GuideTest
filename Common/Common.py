@@ -5,7 +5,6 @@
 # @file: Common.py
 # @project: EAI 2.0 GUI_TEST
 from datetime import datetime
-import allure
 from airtest.core.api import *
 from airtest.core.cv import Template
 import time
@@ -154,6 +153,11 @@ class Common:
             duration = (time.perf_counter() - start_time) * 1000
             self._log_operation(operation, "ASSERT_FAIL", duration, str(e))
             raise AssertionError(f"元素不存在: {image_path}")
+
+    @staticmethod
+    def input_file(file_path):
+        text(file_path)
+        keyevent("{ENTER}")
 
     def __del__(self):
         """析构时确保日志线程安全退出"""

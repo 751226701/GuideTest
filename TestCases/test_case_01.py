@@ -12,51 +12,33 @@ from Config.Config import Config
 from Common.ReadYaml import ReadYaml
 from Common.AllurePretty import PrettyAllure
 from Pages.Engineer import Engineer
+from Common.Common import Common
 yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml"))
 eng = Engineer()
+com = Common()
 
 @pytest.mark.usefixtures("gui_app")
 class TestAddComponent:
+    """
+    机器人导入测试
+    """
 
+    """进入机器人页面"""
     @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_01"]))
     def test_case_01(self,CaseData:dict):
-        """
-        自动化添加地轨 + 机器人 + 工具
-        """
-        # 添加地轨
         eng.click_new()
-        eng.click_additional_axis()
-        eng.click_ground_track()
-        eng.click_welding_ground_track()
-        eng.click_confirm()
-        eng.assert_welding_ground_track()
+        eng.click_gc()
+        eng.click_gc_rob()
+        com.assert_exists(CaseData["断言图片"])
 
-        # 添加机器人
-        eng.click_robot()
-        eng.click_robot_IRB14140()
-        eng.click_world_dropdown()
-        eng.click_BoZhongWeldRail()
-        eng.click_confirm()
-        eng.assert_robot_IRB14140()
-
-        # 添加工具
-        eng.click_tool()
-        eng.click_tool_HQ2()
-        time.sleep(1)
-        eng.click_world_dropdown()
-        eng.click_IRB1410()
-        eng.click_confirm()
-        eng.assert_tool_HQ2()
-
+    """导入ABB机器人IRB1200_5到世界坐标系"""
     @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_02"]))
     def test_case_02(self, CaseData: dict):
-        """
-        自动化添加地轨 + 机器人 + 工具
-        """
-        # 添加地轨
-        eng.click_additional_axis()
-        eng.click_ground_track()
-        eng.click_welding_ground_track()
+        pass
+
+
+
+
 

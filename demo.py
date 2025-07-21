@@ -75,21 +75,21 @@ def demo2():
     if USE_COMMON:
         common.wait_and_touch(r"TempImage\新建.png")
     else:
-        btn = wait(Template(r"TempImage\新建.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
+        btn = wait(Template(r"TempImage/起始窗口-新建.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
         touch(btn)
 
     # 点击附加轴
     if USE_COMMON:
         common.wait_and_touch(r"TempImage\附加轴.png")
     else:
-        btn = wait(Template(r"TempImage\附加轴.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
+        btn = wait(Template(r"TempImage/工程/工程-附加轴.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
         touch(btn)
 
     # 点击地轨
     if USE_COMMON:
         common.wait_and_touch(r"TempImage\地轨.png")
     else:
-        btn = wait(Template(r"TempImage\地轨.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
+        btn = wait(Template(r"TempImage/工程/工程-附加轴-地轨.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
         touch(btn)
 
     # 点击焊接地轨
@@ -103,7 +103,7 @@ def demo2():
     if USE_COMMON:
         common.wait_and_touch(r"TempImage\确定.png")
     else:
-        btn = wait(Template(r"TempImage\确定.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
+        btn = wait(Template(r"TempImage/工程/工程-工具-确定.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
         touch(btn)
 
     # 断言焊接地轨是否添加成功
@@ -117,7 +117,7 @@ def demo2():
     if USE_COMMON:
         common.wait_and_touch(r"TempImage\机器人.png")
     else:
-        btn = wait(Template(r"TempImage\机器人.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
+        btn = wait(Template(r"TempImage/工程/工程-机器人.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
         touch(btn)
 
     # 选择机器人IRB1410
@@ -145,7 +145,7 @@ def demo2():
     if USE_COMMON:
         common.wait_and_touch(r"TempImage\确定.png")
     else:
-        btn = wait(Template(r"TempImage\确定.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
+        btn = wait(Template(r"TempImage/工程/工程-工具-确定.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
         touch(btn)
 
     # 断言机器人IRB1410添加成功
@@ -158,12 +158,12 @@ def demo2():
     if USE_COMMON:
         common.wait_and_touch(r"TempImage\工具.png")
     else:
-        btn = wait(Template(r"TempImage\工具.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
+        btn = wait(Template(r"TempImage/工程/工程-工具.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
         touch(btn)
 
     # 选择工具HQ2
     if USE_COMMON:
-        common.wait_and_touch(r"TempImage\工具-HQ2.png")
+        common.wait_and_touch(r"TempImage\工具-工程-工具-HQ2.png")
     else:
         btn = wait(Template(r"TempImage\工具-HQ2.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
         touch(btn)
@@ -175,7 +175,7 @@ def demo2():
 
     else:
         time.sleep(1)
-        btn = wait(Template(r"TempImage\world下拉框.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
+        btn = wait(Template(r"TempImage/工程/工程-机器人-world下拉框.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
         touch(btn)
 
     # 点击IRB1410
@@ -190,7 +190,7 @@ def demo2():
     if USE_COMMON:
         common.wait_and_touch(r"TempImage\确定.png")
     else:
-        btn = wait(Template(r"TempImage\确定.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
+        btn = wait(Template(r"TempImage/工程/工程-工具-确定.png", threshold=0.8, resolution=(1920, 1080)), timeout=10)
         touch(btn)
 
     # 断言工具HQ2添加成功
