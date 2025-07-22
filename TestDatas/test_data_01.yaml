@@ -5,7 +5,16 @@
   优先级:  blocker
   是否执行: Y
   用例标题: 进入机器人导入页面
-  断言图片: "TempImage/断言/test_case_001.png"
+  匹配参数:
+  步骤:
+    - 关键字: click
+      参数: [new, "点击新建"]
+    - 关键字: click
+      参数: [gc, "点击工程"]
+    - 关键字: click
+      参数: [gc_robot, "点击机器人"]
+    - 关键字: assert_exists_by_key
+      参数: [assert_test_case_001, "断言已进入机器人导入页面"]
 
 -
   用例编号: test_case_02
@@ -14,7 +23,15 @@
   优先级:  blocker
   是否执行: Y
   用例标题: 导入ABB机器人IRB1200_5到世界坐标系
-  断言图片: "TempImage/断言/test_case_002.png"
+  步骤 :
+    - 关键字: click
+      参数: [gc_robot_abb, "点击ABB机器人"]
+    - 关键字: click
+      参数: [gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5"]
+    - 关键字: click
+      参数: [gc_robot_confirm, "点击确定"]
+    - 关键字: assert_exists_by_key
+      参数: [assert_test_case_002, "断言已导入ABB机器人IRB1200_5"]
 
 -
   用例编号: test_case_03

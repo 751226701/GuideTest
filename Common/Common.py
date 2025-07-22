@@ -11,7 +11,7 @@ import time
 import os
 import queue
 import threading
-
+from Config.Config import Config
 
 class AsyncLogger:
     def __init__(self, log_file):
@@ -50,11 +50,11 @@ class AsyncLogger:
 
 class Common:
     def __init__(self,
-                 threshold=0.8,
+                 threshold=0.98,
                  resolution=(1920, 1080),
                  target_pos=5,
                  rgb=False,
-                 log_dir="Logs"):
+                 log_dir=Config.logs_dir):
 
         self.threshold = threshold
         self.resolution = resolution
@@ -68,10 +68,9 @@ class Common:
         log_entry = f"{self.step_counter},{operation},{status},{duration:.0f},{timestamp},{message}\n"
         self.logger.log(log_entry)
 
-    def wait_and_touch(self, image_path, operation="", timeout=10, **kwargs):
+    def wait_and_touch(self, image_path, operation="", timeout=5, **kwargs):
         self.step_counter += 1
         start_time = time.perf_counter()
-
         try:
             tpl = Template(
                 image_path,
@@ -107,7 +106,7 @@ class Common:
             self._log_operation(operation, "FAILED", op_duration, str(e))
             raise
 
-    def input_text(self, image_path, text, operation="", timeout=10, **kwargs):
+    def input_text(self, image_path, text, operation="", timeout=5, **kwargs):
         self.step_counter += 1
         start_time = time.perf_counter()
 
@@ -132,7 +131,7 @@ class Common:
             self._log_operation(operation, "FAILED", duration, str(e))
             raise
 
-    def assert_exists(self, image_path, operation="", timeout=10, **kwargs):
+    def assert_exists(self, image_path, operation="", timeout=5, **kwargs):
         self.step_counter += 1
         start_time = time.perf_counter()
 
@@ -158,6 +157,29 @@ class Common:
     def input_file(file_path):
         text(file_path)
         keyevent("{ENTER}")
+
+    @staticmethod
+    def run_steps(steps, eng, com):
+        for step in steps:
+            keyword = step["关键字"]
+            param = step.get("参数")
+            # 提取所有非关键字/参数的字段作为kwargs
+            kwargs = {k: v for k, v in step.items() if k not in ("关键字", "参数")}
+
+            if hasattr(eng, keyword):
+                func = getattr(eng, keyword)
+            elif hasattr(com, keyword):
+                func = getattr(com, keyword)
+            else:
+                raise Exception(f"未知关键字: {keyword}")
+
+            # 支持参数+关键字参数
+            if param is None:
+                func(**kwargs)
+            elif isinstance(param, (list, tuple)):
+                func(*param, **kwargs)
+            else:
+                func(param, **kwargs)
 
     def __del__(self):
         """析构时确保日志线程安全退出"""
