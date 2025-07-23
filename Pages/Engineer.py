@@ -11,13 +11,21 @@ from Common.Common import Common
 
 class Engineer:
     IMAGE_MAP = {
-        # 工程
         "new": r"TempImage/起始窗口-新建.png",
         "open": r"TempImage/起始窗口-打开.png",
+        # 开始
+        "ks": r"TempImage/开始/开始.png",
+        "ks_home": r"TempImage/开始/开始-主页.png",
+        "ks_design": r"TempImage/开始/开始-设计.png",
+        "ks_design_cancel": r"TempImage/开始/开始-设计-取消.png",
+        # 工程
         "gc": r"TempImage/工程/工程.png",
         "gc_workpiece": r"TempImage/工程/工程-工件.png",
         "gc_robot": r"TempImage/工程/工程-机器人.png",
+        "gc_robot_xx": r"TempImage/工程/工程-机器人-xx.png",
+        "gc_robot_cancel": r"TempImage/工程/工程-机器人-取消.png",
         "gc_robot_file": r"TempImage/工程/工程-机器人-文件.png",
+        "gc_robot_file_open": r"TempImage/工程/工程-机器人-文件-打开.png",
         "gc_robot_confirm": r"TempImage/工程/工程-机器人-确定.png",
         "gc_robot_dropdown_irb2400": r"TempImage/工程/工程-机器人-下拉框选项-IRB2400_16.png",
         "gc_robot_dropdown_bozhong": r"TempImage/工程/工程-机器人-下拉框选项-BoZhongPolishRail.png",
@@ -30,24 +38,48 @@ class Engineer:
         "gc_axis": r"TempImage/工程/工程-附加轴.png",
         # 工程新增机器人模板
         "gc_robot_moka": r"TempImage/工程/工程-机器人-藦卡.png",
+        "gc_robot_moka_mr12_2010": r"TempImage/工程/工程-机器人-藦卡-MR12-2010.png",
         "gc_robot_luoshi": r"TempImage/工程/工程-机器人-珞石.png",
+        "gc_robot_luoshi_nb12_12": r"TempImage/工程/工程-机器人-珞石-NB12-12.png",
         "gc_robot_xinsong": r"TempImage/工程/工程-机器人-新松.png",
+        "gc_robot_xinsong_gcr14_1400": r"TempImage/工程/工程-机器人-新松-GCR14-1400.png",
         "gc_robot_xinshida": r"TempImage/工程/工程-机器人-新时达.png",
+        "gc_robot_xinshida_sr20": r"TempImage/工程/工程-机器人-新时达-SR20.png",
         "gc_robot_siling": r"TempImage/工程/工程-机器人-思灵.png",
+        "gc_robot_siling_diana7": r"TempImage/工程/工程-机器人-思灵-Diana7.png",
         "gc_robot_baoyuan": r"TempImage/工程/工程-机器人-宝元.png",
+        "gc_robot_baoyuan_r6_0616w": r"TempImage/工程/工程-机器人-宝元-R6-0616W.png",
         "gc_robot_qixuan": r"TempImage/工程/工程-机器人-启玄.png",
+        "gc_robot_qixuan_1500": r"TempImage/工程/工程-机器人-启玄-qixuan-1500.png",
         "gc_robot_chuangmingxin": r"TempImage/工程/工程-机器人-创明鑫.png",
+        "gc_robot_chuangmingxin_mx1440h_l6": r"TempImage/工程/工程-机器人-创明鑫-MX1440H-L6.png",
         "gc_robot_yaskawa": r"TempImage/工程/工程-机器人-YASKAWA.png",
+        "gc_robot_yaskawa_epx2050": r"TempImage/工程/工程-机器人-YASKAWA-EPX2050.png",
         "gc_robot_ur": r"TempImage/工程/工程-机器人-UR.png",
+        "gc_robot_ur_ur10": r"TempImage/工程/工程-机器人-UR-UR10.png",
         "gc_robot_staubli": r"TempImage/工程/工程-机器人-STAUBLI.png",
+        "gc_robot_staubli_rx160": r"TempImage/工程/工程-机器人-STAUBLI-RX160.png",
         "gc_robot_kuka": r"TempImage/工程/工程-机器人-KUKA.png",
+        "gc_robot_kuka_kr10_r1420": r"TempImage/工程/工程-机器人-KUKA-KR10 R1420.png",
         "gc_robot_fanuc": r"TempImage/工程/工程-机器人-FANUC.png",
+        "gc_robot_fanuc_lr200id7l": r"TempImage/工程/工程-机器人-FANUC-LR Mate 200iD7L.png",
         "gc_robot_efort": r"TempImage/工程/工程-机器人-EFORT.png",
+        "gc_robot_efort_acr12_2000": r"TempImage/工程/工程-机器人-EFORT-ACR12-2000.png",
         "gc_robot_aubo": r"TempImage/工程/工程-机器人-AUBO.png",
+        "gc_robot_aubo_aubo-i10": r"TempImage/工程/工程-机器人-AUBO-AUBO-i10.png",
         "gc_robot_abb": r"TempImage/工程/工程-机器人-ABB.png",
         "gc_robot_abb_irb1200_5": r"TempImage/工程/工程-机器人-ABB-IRB1200_5.png",
-        "gc_robot-ABB_irb2400": r"TempImage/工程/工程-机器人-ABB-IRB2400_16.png",
+        "gc_robot_abb_irb2400": r"TempImage/工程/工程-机器人-ABB-IRB2400_16.png",
+        "gc_robot_x": r"TempImage/工程/工程-机器人-X.png",
+        "gc_robot_y": r"TempImage/工程/工程-机器人-Y.png",
+        "gc_robot_z": r"TempImage/工程/工程-机器人-Z.png",
+        "gc_robot_Rx": r"TempImage/工程/工程-机器人-Rx.png",
+        "gc_robot_Ry": r"TempImage/工程/工程-机器人-Ry.png",
+        "gc_robot_Rz": r"TempImage/工程/工程-机器人-Rz.png",
         # 工作站
+        "ws": r"TempImage/工作站/工作站.png",
+        "ws_robot_IRB1200_5": r"TempImage/工作站/工作站-机器人-IRB1200_5.png",
+        "ws_robot_delete": r"TempImage/工作站/工作站-机器人-删除.png",
         "ws_bozhong": r"TempImage/工作站/工作站-BoZhongPolishRail.png",
         "ws_move": r"TempImage/工作站/工作站-移动.png",
         "ws_move_confirm": r"TempImage/工作站/工作站-移动-确定.png",
@@ -166,7 +198,7 @@ class Engineer:
         "assert_test_case_048": r"TempImage/断言/test_case_048.png",
         "assert_test_case_049_1": r"TempImage/断言/test_case_049_1.png",
         "assert_test_case_049": r"TempImage/断言/test_case_049.png",
-        "assert_test_case_050": r"TempImage/断言/test_case_50.png",
+        "assert_test_case_050": r"TempImage/断言/test_case_050.png",
         "assert_test_case_051": r"TempImage/断言/test_case_051",
         "assert_test_case_052": r"TempImage/断言/test_case_052.png",
         "assert_test_case_053": r"TempImage/断言/test_case_053.png",
@@ -183,7 +215,7 @@ class Engineer:
         "assert_test_case_064": r"TempImage/断言/test_case_064.png",
         "assert_test_case_065": r"TempImage/断言/test_case_065.png",
         "assert_test_case_066": r"TempImage/断言/test_case_066.png",
-        "assert_test_case_067": r"TempImage/断言/test_case_067",
+        "assert_test_case_067": r"TempImage/断言/test_case_067.png",
         "assert_test_case_068": r"TempImage/断言/test_case_068.png",
         "assert_test_case_069": r"TempImage/断言/test_case_069.png",
         "assert_test_case_070": r"TempImage/断言/test_case_070.png",
@@ -192,11 +224,17 @@ class Engineer:
         "assert_test_case_073_1": r"TempImage/断言/test_case_073_1.png",
         "assert_test_case_073": r"TempImage/断言/test_case_073.png",
         "assert_test_case_074": r"TempImage/断言/test_case_074.png",
+        "assert_test_case_074_1": r"TempImage/断言/test_case_074_1.png",
         "assert_test_case_075": r"TempImage/断言/test_case_075.png",
+        "assert_test_case_075_1": r"TempImage/断言/test_case_075_1.png",
         "assert_test_case_076": r"TempImage/断言/test_case_076.png",
+        "assert_test_case_076_1": r"TempImage/断言/test_case_076_1.png",
         "assert_test_case_077": r"TempImage/断言/test_case_077.png",
+        "assert_test_case_077_1": r"TempImage/断言/test_case_077_1.png",
         "assert_test_case_078": r"TempImage/断言/test_case_078.png",
+        "assert_test_case_078_1": r"TempImage/断言/test_case_078_1.png",
         "assert_test_case_079": r"TempImage/断言/test_case_079.png",
+        "assert_test_case_079_1": r"TempImage/断言/test_case_079_1.png",
         
         
     }
@@ -212,11 +250,27 @@ class Engineer:
         self.common.wait_and_touch(image_path, operation or f"点击{image_key}",timeout=timeout, **kwargs)
     
     @allure.step("{operation}")
-    def assert_exists_by_key(self, image_key, operation, timeout=10, **kwargs):
+    def right_click(self, image_key, operation="", timeout=10, **kwargs):
+        image_path = self.IMAGE_MAP.get(image_key)
+        if not image_path:
+            raise ValueError(f"未找到图片关键字: {image_key}")
+        self.common.right_click(image_path, operation or f"右键点击{image_key}", timeout=timeout, **kwargs)
+
+    @allure.step("{operation}")
+    def assert_exists(self, image_key, operation, timeout=10, **kwargs):
         image_path = self.IMAGE_MAP.get(image_key)
         if not image_path:
             raise ValueError(f"未找到图片关键字: {image_key}")
         self.common.assert_exists(image_path, operation or f"断言{image_key}", timeout=timeout, **kwargs)
+
+    @allure.step("{operation}")
+    def input_text(self, image_key, input_str, operation="", timeout=10, **kwargs):
+        image_path = self.IMAGE_MAP.get(image_key)
+        if not image_path:
+            raise ValueError(f"未找到图片关键字: {image_key}")
+        self.common.input_text(image_path, input_str, operation or f"输入{input_str}", timeout=timeout, **kwargs)
+
+    
 
     # ******************工程******************
 

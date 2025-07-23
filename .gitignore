@@ -1,3 +1,10 @@
 .venv/
 TestReport/*
 Logs/*
+__pycache__
+Common/__pycache__
+Config/__pycache__
+Pages/__pycache__
+TestDatas/__pycache__
+TestCases/__pycache__
+TestReport/__pycache__

@@ -48,7 +48,7 @@ if __name__ == '__main__':
     # 取全部值
     # print(yaml_data.read())
     # 取索引位置值
-    print(yaml_data.read(0))
+    print(yaml_data.read(67))
     # 取切片范围值
     # print(yaml_data.read(slice(0, 2)))
     # 按用例编号取值

@@ -106,7 +106,7 @@ class Common:
             self._log_operation(operation, "FAILED", op_duration, str(e))
             raise
 
-    def input_text(self, image_path, text, operation="", timeout=5, **kwargs):
+    def input_text(self, image_path, input_str, operation="", timeout=5, **kwargs):
         self.step_counter += 1
         start_time = time.perf_counter()
 
@@ -121,7 +121,8 @@ class Common:
             )
             pos = wait(tpl, timeout=timeout)
             touch(pos)
-            text(str(text), enter=False)
+            keyevent('^a')
+            text(str(input_str), enter=False)
 
             duration = (time.perf_counter() - start_time) * 1000
             self._log_operation(operation, "SUCCESS", duration)
@@ -129,6 +130,30 @@ class Common:
         except Exception as e:
             duration = (time.perf_counter() - start_time) * 1000
             self._log_operation(operation, "FAILED", duration, str(e))
+            raise
+
+    def right_click(self, image_path, operation="", timeout=5, **kwargs):
+        """在指定图片位置执行鼠标右键点击"""
+        self.step_counter += 1
+        start_time = time.perf_counter()
+        try:
+            tpl = Template(
+                image_path,
+                threshold=kwargs.get("threshold", self.threshold),
+                record_pos=kwargs.get("record_pos"),
+                resolution=kwargs.get("resolution", self.resolution),
+                rgb=kwargs.get("rgb", self.rgb),
+                target_pos=kwargs.get("target_pos", self.target_pos)
+            )
+            pos = wait(tpl, timeout=timeout)
+            touch(pos, right_click=True)
+
+            duration = (time.perf_counter() - start_time) * 1000
+            self._log_operation(operation or f"右键点击:{image_path}", "SUCCESS", duration)
+            return duration
+        except Exception as e:
+            duration = (time.perf_counter() - start_time) * 1000
+            self._log_operation(operation or f"右键点击:{image_path}", "FAILED", duration, str(e))
             raise
 
     def assert_exists(self, image_path, operation="", timeout=5, **kwargs):
@@ -153,6 +178,8 @@ class Common:
             self._log_operation(operation, "ASSERT_FAIL", duration, str(e))
             raise AssertionError(f"元素不存在: {image_path}")
 
+    
+
     @staticmethod
     def input_file(file_path):
         text(file_path)
@@ -163,8 +190,13 @@ class Common:
         for step in steps:
             keyword = step["关键字"]
             param = step.get("参数")
-            # 提取所有非关键字/参数的字段作为kwargs
             kwargs = {k: v for k, v in step.items() if k not in ("关键字", "参数")}
+
+            if keyword == "repeat":
+                count, repeat_steps = param
+                for _ in range(int(count)):
+                    Common.run_steps(repeat_steps, eng, com)
+                continue
 
             if hasattr(eng, keyword):
                 func = getattr(eng, keyword)
