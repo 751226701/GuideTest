@@ -1693,8 +1693,21 @@
   优先级: blocker
   是否执行: Y
   用例标题: 拖动机器人列表滚动条
-  断言图片:
-    - "TempImage/断言/test_case_072.png"
+  步骤:
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: swipe
+      参数: [ [1900,360], [1900,540], "向下拖动ABB机器人列表滚动条" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_072, "断言ABB机器人滑动条下箭头" ]
+      threshold: 0.9
+    - 关键字: swipe
+      参数: [ [1900,540], [1900,360], "向上拖动ABB机器人列表滚动条" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_072_1, "断言ABB机器人滑动条上箭头" ]
+      threshold: 0.9
 
 - 用例编号: test_case_73
   模块: 01 工程
@@ -1702,8 +1715,19 @@
   优先级: blocker
   是否执行: Y
   用例标题: 点击机器人滚动条的上下三角
-  断言图片:
-    - "TempImage/断言/test_case_073.png"
+  步骤:
+  - 关键字: click
+    参数: [ gc_robot_abb_slider_bottom, "点击ABB机器人滑动条下箭头" ]
+    target_pos: 8
+  - 关键字: assert_exists
+    参数: [ assert_test_case_073, "断言ABB机器人滑动条下箭头" ]
+    threshold: 0.9
+  - 关键字: click
+    参数: [ gc_robot_abb_slider_top, "点击ABB机器人滑动条上箭头" ]
+    target_pos: 2
+  - 关键字: assert_exists
+    参数: [ assert_test_case_073_1, "断言ABB机器人滑动条上箭头" ]
+    threshold: 0.9
 
 - 用例编号: test_case_74
   模块: 01 工程
@@ -1712,10 +1736,6 @@
   是否执行: Y
   用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置X=2000.1234
   步骤 :
-    - 关键字: click
-      参数: [ new , "点击新建" ]
-    - 关键字: click
-      参数: [ gc , "点击工程" ]
     - 关键字: click
       参数: [ ws, "点击工作站" ]
     - 关键字: click

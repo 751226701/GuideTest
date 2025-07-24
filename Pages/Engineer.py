@@ -36,6 +36,8 @@ class Engineer:
         "gc_axis_bozhong": r"TempImage/工程/工程-附加轴-地轨-BoZhongPolishRail.png",
         "gc_axis_rail": r"TempImage/工程/工程-附加轴-地轨.png",
         "gc_axis": r"TempImage/工程/工程-附加轴.png",
+        "gc_robot_abb_slider_top": r"TempImage/工程/工程-机器人-ABB-滑动条上箭头.png",
+        "gc_robot_abb_slider_bottom": r"TempImage/工程/工程-机器人-ABB-滑动条下箭头.png",
         # 工程新增机器人模板
         "gc_robot_moka": r"TempImage/工程/工程-机器人-藦卡.png",
         "gc_robot_moka_mr12_2010": r"TempImage/工程/工程-机器人-藦卡-MR12-2010.png",
@@ -221,6 +223,7 @@ class Engineer:
         "assert_test_case_070": r"TempImage/断言/test_case_070.png",
         "assert_test_case_071": r"TempImage/断言/test_case_071.png",
         "assert_test_case_072": r"TempImage/断言/test_case_072.png",
+        "assert_test_case_072_1": r"TempImage/断言/test_case_072_1.png",
         "assert_test_case_073_1": r"TempImage/断言/test_case_073_1.png",
         "assert_test_case_073": r"TempImage/断言/test_case_073.png",
         "assert_test_case_074": r"TempImage/断言/test_case_074.png",
