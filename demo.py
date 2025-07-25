@@ -6,7 +6,6 @@
 # @project: EAI 2.0 GUI_TEST
 import time
 import logging
-
 from pyexpat.errors import messages
 from pywinauto import Application
 from airtest.core.api import *

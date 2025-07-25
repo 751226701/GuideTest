@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 # @author: 刘涛
 # @time: 2025/6/25
-# @file: test_case_add_component.py
+# @file: test_case_01.py
 # @project: EAI 2.0 GUI_TEST
 import os
 import pytest
@@ -18,7 +18,7 @@ eng = Engineer(common_instance=com)
 
 
 @pytest.mark.usefixtures("gui_app")
-class TestAddComponent:
+class TestAddRobot:
     
     @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", yaml_data)
