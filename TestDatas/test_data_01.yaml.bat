@@ -1,0 +1,1890 @@
+-
+  用例编号: test_case_01
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级:  blocker
+  是否执行: Y
+  用例标题: 进入机器人导入页面
+  匹配参数:
+  步骤:
+    - 关键字: click
+      参数: [新建, "点击新建"]
+    - 关键字: click
+      参数: [工程, "点击工程"]
+    - 关键字: click
+      参数: [工程-机器人, "点击机器人"]
+    - 关键字: assert_exists
+      参数: [test_case_001, "断言已进入机器人导入页面"]
+
+-
+  用例编号: test_case_02
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级:  blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系
+  步骤 :
+    - 关键字: click
+      参数: [工程-机器人-ABB, "点击ABB机器人"]
+    - 关键字: click
+      参数: [工程-机器人-ABB-IRB1200_5, "点击ABB机器人IRB1200_5"]
+    - 关键字: click
+      参数: [工程-机器人-确定, "点击确定"]
+    - 关键字: assert_exists
+      参数: [test_case_002, "断言已导入ABB机器人IRB1200_5"]
+
+-
+  用例编号: test_case_03
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级:  blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置X=2000.123
+  步骤 :
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [gc_robot, "点击机器人"]
+    - 关键字: click
+      参数: [gc_robot_abb, "点击ABB机器人分类"]
+    - 关键字: click
+      参数: [gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5"]
+    - 关键字: input_text
+      参数: [gc_robot_x, "2000.123", "输入X=2000.123"]
+    - 关键字: assert_exists
+      参数: [assert_test_case_003_1, "断言X=2000.123"]
+    - 关键字: click
+      参数: [gc_robot_confirm, "点击确定"]
+    - 关键字: assert_exists
+      参数: [assert_test_case_003, "断言已导入ABB机器人IRB1200_5添加成功"]
+      threshold: 0.9
+
+-
+  用例编号: test_case_04
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级:  blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置X=50000
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_x, "50000", "输入X=50000" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_004_1, "断言X=50000" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_004, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+-
+  用例编号: test_case_05
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级:  blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置X=99999
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_x, "99999", "输入X=99999" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_005_1, "断言X=99999" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_005, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_06
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置X=99999.001
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_x, "99999.001", "输入X=99999.001" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_006_1, "断言X=99999" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_006, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_07
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置X=-50000
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_x, "-50000", "输入X=-50000" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_007_1, "断言X=-50000" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_007, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_08
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置X=-99999
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_x, "-99999", "输入X=-99999" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_008_1, "断言X=-99999" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_008, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_09
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置X=-99999.001
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_x, "-99999.001", "输入X=-99999.001" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_009_1, "断言X=-99999" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_009, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_10
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: normal
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置X=Ab#+
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_x, "Ab#+", "输入X=Ab#+" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_010, "断言X=0" ]
+      threshold: 0.95
+
+- 用例编号: test_case_11
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Y=2000.123
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_y, "2000.123", "输入Y=2000.123" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_011_1, "断言Y=2000.123" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_011, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.9
+
+- 用例编号: test_case_12
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Y=50000
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_y, "50000", "输入Y=50000" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_012_1, "断言Y=50000" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_012, "断言已导入ABB机器人IRB1200_5添加成功" ]
+
+- 用例编号: test_case_13
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Y=99999
+  步骤:
+  - 关键字: click
+    参数: [ ws, "点击工作站" ]
+  - 关键字: click
+    参数: [ gc_robot, "点击机器人" ]
+  - 关键字: click
+    参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+  - 关键字: click
+    参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+  - 关键字: input_text
+    参数: [ gc_robot_y, "99999", "输入Y=99999" ]
+  - 关键字: assert_exists
+    参数: [ assert_test_case_013_1, "断言Y=99999" ]
+  - 关键字: click
+    参数: [ gc_robot_confirm, "点击确定" ]
+  - 关键字: assert_exists
+    参数: [ assert_test_case_013, "断言已导入ABB机器人IRB1200_5添加成功" ]
+    threshold: 0.95
+
+- 用例编号: test_case_14
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Y=99999.001
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_y, "99999.001", "输入Y=99999.001" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_014_1, "断言Y=99999" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_014, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_15
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Y=-50000
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_y, "-50000", "输入Y=-50000" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_015_1, "断言Y=-50000" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_015, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_16
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Y=-99999
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_y, "-99999", "输入Y=-99999" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_016_1, "断言Y=-99999" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_016, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_17
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Y=-99999.001
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_y, "-99999.001", "输入Y=-99999.001" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_017_1, "断言Y=-99999" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_017, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_18
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: normal
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Y=Ab#+
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_y, "Ab#+", "输入Y=Ab#+" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_018, "断言Y=0" ]
+      threshold: 0.95
+
+- 用例编号: test_case_19
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Z=2000.123
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_z, "2000.123", "输入Z=2000.123" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_019_1, "断言Z=2000.123" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_019, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.9
+
+- 用例编号: test_case_20
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Z=50000
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_z, "50000", "输入Z=50000" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_020_1, "断言Z=50000" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_020, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_21
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Z=99999
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_z, "99999", "输入Z=99999" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_021_1, "断言Z=99999" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_021, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_22
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Z=99999.001
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_z, "99999.001", "输入Z=99999.001" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_022_1, "断言Z=99999" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_022, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_23
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Z=-50000
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_z, "-50000", "输入Z=-50000" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_023_1, "断言Z=-50000" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_023, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_24
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Z=-99999
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_z, "-99999", "输入Z=-99999" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_024_1, "断言Z=-99999" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_024, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_25
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Z=-99999.001
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_z, "-99999.001", "输入Z=-99999.001" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_025_1, "断言Z=-99999" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_025, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_26
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: normal
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Z=Ab#+
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_z, "Ab#+", "输入Z=Ab#+" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_026, "断言Z=0" ]
+      threshold: 0.95
+
+- 用例编号: test_case_27
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rx=90.123
+  步骤:
+    - 关键字: click
+      参数: [ ks , "点击开始"]
+    - 关键字: click
+      参数: [ ks_design , "点击设计" ]
+    - 关键字: click
+      参数: [ ks_design_cancel , "点击取消" ]
+    - 关键字: click
+      参数: [ gc, "点击工程" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rx, "90.123", "输入Rx=90.123" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_027_1, "断言Rx=90.123" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_027, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_28
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rx=180
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rx, "180", "输入Rx=180" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_028_1, "断言Rx=180" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_028, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_29
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rx=720
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rx, "720", "输入Rx=720" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_029_1, "断言Rx=720" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_029, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_30
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rx=720.001
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rx, "720.001", "输入Rx=720.001" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_030_1, "断言Rx=720" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_030, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_31
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rx=-180
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rx, "-180", "输入Rx=-180" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_031_1, "断言Rx=-180" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_031, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_32
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rx=-720
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rx, "-720", "输入Rx=-720" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_032_1, "断言Rx=-720" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_032, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_33
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rx=-720.001
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rx, "-720.001", "输入Rx=-720.001" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_033_1, "断言Rx=-720" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_033, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_34
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: normal
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rx=Ab#+
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rx, "Ab#+", "输入Rx=Ab#+" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_034, "断言Rx=0" ]
+      threshold: 0.95
+
+- 用例编号: test_case_35
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Ry=90.123
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Ry, "90.123", "输入Ry=90.123" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_035_1, "断言Ry=90.123" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_035, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_36
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Ry=180
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Ry, "180", "输入Ry=180" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_036_1, "断言Ry=180" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_036, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_37
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Ry=720
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Ry, "720", "输入Ry=720" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_037_1, "断言Ry=720" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_037, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_38
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Ry=720.001
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Ry, "720.001", "输入Ry=720.001" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_038_1, "断言Ry=720" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_038, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_39
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Ry=-180
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Ry, "-180", "输入Ry=-180" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_039_1, "断言Ry=-180" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_039, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_40
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Ry=-720
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Ry, "-720", "输入Ry=-720" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_040_1, "断言Ry=-720" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_040, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_41
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Ry=-720.001
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Ry, "-720.001", "输入Ry=-720.001" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_041_1, "断言Ry=-720" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_041, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_42
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: normal
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Ry=Ab#+
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Ry, "Ab#+", "输入Ry=Ab#+" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_042, "断言Ry=0" ]
+      threshold: 0.95
+
+- 用例编号: test_case_43
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rz=90.123
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rz, "90.123", "输入Rz=90.123" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_043_1, "断言Rz=90.123" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_043, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_44
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rz=180
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rz, "180", "输入Rz=180" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_044_1, "断言Rz=180" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_044, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_45
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rz=720
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rz, "720", "输入Rz=720" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_045_1, "断言Rz=720" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_045, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_46
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rz=720.001
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rz, "720.001", "输入Rz=720.001" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_046_1, "断言Rz=720" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_046, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_47
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rz=-180
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rz, "-180", "输入Rz=-180" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_047_1, "断言Rz=-180" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_047, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_48
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rz=-720
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rz, "-720", "输入Rz=-720" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_048_1, "断言Rz=-720" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_048, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_49
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rz=-720.001
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rz, "-720.001", "输入Rz=-720.001" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_049_1, "断言Rz=-720" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_049, "断言已导入ABB机器人IRB1200_5添加成功" ]
+      threshold: 0.95
+
+- 用例编号: test_case_50
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rz=Ab#+
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: input_text
+      参数: [ gc_robot_Rz, "Ab#+", "输入Rz=Ab#+" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_050, "断言Rz=0" ]
+      threshold: 0.95
+
+- 用例编号: test_case_51
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: N
+  用例标题: 导入AUBO机器人AUBO-i10到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ks , "点击开始" ]
+    - 关键字: click
+      参数: [ ks_design , "点击设计" ]
+    - 关键字: click
+      参数: [ ks_design_cancel , "点击取消" ]
+    - 关键字: click
+      参数: [ gc, "点击工程" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_aubo, "点击AUBO机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_aubo_aubo-i10, "点击AUBO机器人AUBO-i10" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_051, "断言已导入AUBO机器人AUBO-i10添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_52
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入EFORT机器人ARC12-2000到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_efort, "点击EFORT机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_efort_acr12_2000, "点击EFORT机器人ARC12-2000" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_052, "断言已导入EFORT机器人ARC12-2000添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_53
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入FANUC机器人LR Mate 200iD7L到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_fanuc, "点击FANUC机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_fanuc_lr200id7l, "点击FANUC机器人LR Mate 200iD7L" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_053, "断言已导入FANUC机器人LR Mate 200iD7L添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_54
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入KUKA机器人KR10 R1420到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_kuka, "点击KUKA机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_kuka_kr10_r1420, "点击KUKA机器人KR10 R1420" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_054, "断言已导入KUKA机器人KR10 R1420添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_55
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入STAUBLI机器人RX160到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_staubli, "点击STAUBLI机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_staubli_rx160, "点击STAUBLI机器人RX160" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_055, "断言已导入STAUBLI机器人RX160添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_56
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入UR机器人UR10到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_ur, "点击UR机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_ur_ur10, "点击UR机器人UR10" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_056, "断言已导入UR机器人UR10添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_57
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: N
+  用例标题: 导入YASKAWA机器人EPX2050到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_yaskawa, "点击YASKAWA机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_yaskawa_epx2050, "点击YASKAWA机器人EPX2050" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_057, "断言已导入YASKAWA机器人EPX2050添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_58
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入创明鑫机器人MX1440H-L6到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_chuangmingxin, "点击创明鑫机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_chuangmingxin_mx1440h_l6, "点击创明鑫机器人MX1440H-L6" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_058, "断言已导入创明鑫机器人MX1440H-L6添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_59
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入启玄机器人qixuan-1500到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_qixuan, "点击启玄机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_qixuan_1500, "点击启玄机器人qixuan-1500" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_059, "断言已导入启玄机器人qixuan-1500添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_60
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入宝元机器人R6-0616W到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_baoyuan, "点击宝元机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_baoyuan_r6_0616w, "点击宝元机器人R6-0616W" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_060, "断言已导入宝元机器人R6-0616W添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_61
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入思灵机器人Diana7到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_siling, "点击思灵机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_siling_diana7, "点击思灵机器人Diana7" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_061, "断言已导入思灵机器人Diana7添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_62
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入新时达机器人SR20到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_xinshida, "点击新时达机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_xinshida_sr20, "点击新时达机器人SR20" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_062, "断言已导入新时达机器人SR20添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_63
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入新松机器人GCR14-1400到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_xinsong, "点击新松机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_xinsong_gcr14_1400, "点击新松机器人GCR14-1400" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_063, "断言已导入新松机器人GCR14-1400添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_64
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入珞石机器人NB12-12到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_luoshi, "点击珞石机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_luoshi_nb12_12, "点击珞石机器人NB12-12" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_064, "断言已导入珞石机器人NB12-12添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_65
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入藦卡机器人MR12-2010到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_moka, "点击藦卡机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_moka_mr12_2010, "点击藦卡机器人MR12-2010" ]
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_065, "断言已导入藦卡机器人MR12-2010添加成功" ]
+      threshold: 0.85
+
+- 用例编号: test_case_66
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入自定义机器人到世界坐标系
+  步骤:
+    - 关键字: click
+      参数: [ ks , "点击开始" ]
+    - 关键字: click
+      参数: [ ks_design, "点击设计" ]
+    - 关键字: click
+      参数: [ ks_design_cancel, "点击取消" ]
+    - 关键字: click
+      参数: [ gc , "点击工程" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_file, "点击文件" ]
+    - 关键字: input_file
+      参数: [ 'D:\Desktop\工具\ARCMate120iD12L.robot']
+    - 关键字: click
+      参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_066, "断言已导入自定义机器人添加成功" ]
+      threshold: 0.85
+
+
+- 用例编号: test_case_67
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入自定义机器人时输入不符合规范的文件格式
+  步骤:
+    - 关键字: click
+      参数: [ ws , "点击工作站" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_file, "点击文件" ]
+    - 关键字: input_file
+      参数: [ 'D:\Desktop\工具\test.txt' ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_067, "断言错误文件导入失败" ]
+      threshold: 0.85
+
+- 用例编号: test_case_68
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 重复导入一个机器人20次
+  步骤: 
+    - 关键字: click
+      参数: [ ws , "点击工作站" ]
+    - 关键字: repeat
+      参数:
+        - 20
+        - 
+          - 关键字: click
+            参数: [ gc_robot, "点击机器人" ]
+          - 关键字: click
+            参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+          - 关键字: click
+            参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+          - 关键字: click
+            参数: [ gc_robot_confirm, "点击确定" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_068, "断言导入ABB机器人IRB1200_5成功20次" ]
+
+- 用例编号: test_case_69
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入机器人后删除机器人,重复20次
+  步骤:
+    - 关键字: click
+      参数: [ ks , "点击开始"]
+    - 关键字: click
+      参数: [ ks_design, "点击设计" ]
+    - 关键字: click
+      参数: [ ks_design_cancel, "点击取消" ]
+    - 关键字: click
+      参数: [ gc , "点击工程" ]
+    - 关键字: repeat
+      参数:
+        - 20
+        - - 关键字: click
+            参数: [ gc_robot, "点击机器人" ]
+          - 关键字: click
+            参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+          - 关键字: click
+            参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+          - 关键字: click
+            参数: [ gc_robot_confirm, "点击确定" ]
+          - 关键字: right_click
+            参数: [ ws_robot_IRB1200_5, "右键点击机器人列表" ]
+          - 关键字: click
+            参数: [ ws_robot_delete, "点击删除" ]
+            threshold: 0.85
+    - 关键字: assert_exists
+      参数: [ assert_test_case_069, "断言导入ABB机器人IRB1200_5成功20次" ]
+      threshold: 0.85
+
+- 用例编号: test_case_70
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 选择机器人后点击取消
+  步骤:
+    - 关键字: click
+      参数: [ gc , "点击工程" ]
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: click
+      参数: [ gc_robot_cancel, "点击取消" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_070, "断言取消导入ABB机器人IRB1200_5" ]
+
+- 用例编号: test_case_71
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 进入机器人列表页面后点击X
+  步骤:
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: click
+      参数: [ gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5" ]
+    - 关键字: click
+      参数: [ gc_robot_xx, "点击取消" ]
+      target_pos: 6
+    - 关键字: assert_exists
+      参数: [ assert_test_case_070, "断言取消导入ABB机器人IRB1200_5" ]
+
+- 用例编号: test_case_72
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 拖动机器人列表滚动条
+  步骤:
+    - 关键字: click
+      参数: [ gc_robot, "点击机器人" ]
+    - 关键字: click
+      参数: [ gc_robot_abb, "点击ABB机器人分类" ]
+    - 关键字: swipe
+      参数: [ [1900,360], [1900,540], "向下拖动ABB机器人列表滚动条" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_072, "断言ABB机器人滑动条下箭头" ]
+      threshold: 0.9
+    - 关键字: swipe
+      参数: [ [1900,540], [1900,360], "向上拖动ABB机器人列表滚动条" ]
+    - 关键字: assert_exists
+      参数: [ assert_test_case_072_1, "断言ABB机器人滑动条上箭头" ]
+      threshold: 0.9
+
+- 用例编号: test_case_73
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 点击机器人滚动条的上下三角
+  步骤:
+  - 关键字: click
+    参数: [ gc_robot_abb_slider_bottom, "点击ABB机器人滑动条下箭头" ]
+    target_pos: 8
+  - 关键字: assert_exists
+    参数: [ assert_test_case_073, "断言ABB机器人滑动条下箭头" ]
+    threshold: 0.9
+  - 关键字: click
+    参数: [ gc_robot_abb_slider_top, "点击ABB机器人滑动条上箭头" ]
+    target_pos: 2
+  - 关键字: assert_exists
+    参数: [ assert_test_case_073_1, "断言ABB机器人滑动条上箭头" ]
+    threshold: 0.9
+
+- 用例编号: test_case_74
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置X=2000.1234
+  步骤 :
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [gc_robot, "点击机器人"]
+    - 关键字: click
+      参数: [gc_robot_abb, "点击ABB机器人分类"]
+    - 关键字: click
+      参数: [gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5"]
+    - 关键字: input_text
+      参数: [gc_robot_x, "2000.1234", "输入X=2000.1234"]
+    - 关键字: assert_exists
+      参数: [assert_test_case_074, "断言X=2000.123"]
+      threshold: 0.98
+    - 关键字: click
+      参数: [gc_robot_confirm, "点击确定"]
+    - 关键字: assert_exists
+      参数: [assert_test_case_074_1, "断言已导入ABB机器人IRB1200_5添加成功"]
+      threshold: 0.85
+
+- 用例编号: test_case_75
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Y=2000.1234
+  步骤 :
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [gc_robot, "点击机器人"]
+    - 关键字: click
+      参数: [gc_robot_abb, "点击ABB机器人分类"]
+    - 关键字: click
+      参数: [gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5"]
+    - 关键字: input_text
+      参数: [gc_robot_y, "2000.1234", "输入Y=2000.1234"]
+    - 关键字: assert_exists
+      参数: [assert_test_case_075, "断言Y=2000.123"]
+      threshold: 0.98
+    - 关键字: click
+      参数: [gc_robot_confirm, "点击确定"]
+    - 关键字: assert_exists
+      参数: [assert_test_case_075_1, "断言已导入ABB机器人IRB1200_5添加成功"]
+      threshold: 0.85
+
+- 用例编号: test_case_76
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Z=2000.1234
+  步骤 :
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [gc_robot, "点击机器人"]
+    - 关键字: click
+      参数: [gc_robot_abb, "点击ABB机器人分类"]
+    - 关键字: click
+      参数: [gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5"]
+    - 关键字: input_text
+      参数: [gc_robot_z, "2000.1234", "输入Z=2000.1234"]
+    - 关键字: assert_exists
+      参数: [assert_test_case_076, "断言Z=2000.123"]
+      threshold: 0.98
+    - 关键字: click
+      参数: [gc_robot_confirm, "点击确定"]
+    - 关键字: assert_exists
+      参数: [assert_test_case_076_1, "断言已导入ABB机器人IRB1200_5添加成功"]
+      threshold: 0.85
+
+- 用例编号: test_case_77
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rx=90.1234
+  步骤 :
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [gc_robot, "点击机器人"]
+    - 关键字: click
+      参数: [gc_robot_abb, "点击ABB机器人分类"]
+    - 关键字: click
+      参数: [gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5"]
+    - 关键字: input_text
+      参数: [gc_robot_Rx, "90.1234", "输入Rx=90.1234"]
+    - 关键字: assert_exists
+      参数: [assert_test_case_077, "断言Rx=90.123"]
+      threshold: 0.98
+    - 关键字: click
+      参数: [gc_robot_confirm, "点击确定"]
+    - 关键字: assert_exists
+      参数: [assert_test_case_077_1, "断言已导入ABB机器人IRB1200_5添加成功"]
+      threshold: 0.85
+
+- 用例编号: test_case_78
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Ry=90.1234
+  步骤 :
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [gc_robot, "点击机器人"]
+    - 关键字: click
+      参数: [gc_robot_abb, "点击ABB机器人分类"]
+    - 关键字: click
+      参数: [gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5"]
+    - 关键字: input_text
+      参数: [gc_robot_Ry, "90.1234", "输入Ry=90.1234"]
+    - 关键字: assert_exists
+      参数: [assert_test_case_078, "断言Ry=90.123"]
+      threshold: 0.98
+    - 关键字: click
+      参数: [gc_robot_confirm, "点击确定"]
+    - 关键字: assert_exists
+      参数: [assert_test_case_078_1, "断言已导入ABB机器人IRB1200_5添加成功"]
+      threshold: 0.85
+
+- 用例编号: test_case_79
+  模块: 01 工程
+  功能: 01 机器人导入
+  优先级: blocker
+  是否执行: Y
+  用例标题: 导入ABB机器人IRB1200_5到世界坐标系,设置Rz=90.1234
+  步骤 :
+    - 关键字: click
+      参数: [ ws, "点击工作站" ]
+    - 关键字: click
+      参数: [gc_robot, "点击机器人"]
+    - 关键字: click
+      参数: [gc_robot_abb, "点击ABB机器人分类"]
+    - 关键字: click
+      参数: [gc_robot_abb_irb1200_5, "点击ABB机器人IRB1200_5"]
+    - 关键字: input_text
+      参数: [gc_robot_Rz, "90.1234", "输入Rz=90.1234"]
+    - 关键字: assert_exists
+      参数: [assert_test_case_079, "断言Rz=90.123"]
+      threshold: 0.98
+    - 关键字: click
+      参数: [gc_robot_confirm, "点击确定"]
+    - 关键字: assert_exists
+      参数: [assert_test_case_079_1, "断言已导入ABB机器人IRB1200_5添加成功"]
+      threshold: 0.85
+
+
+
+
+
+
+
+

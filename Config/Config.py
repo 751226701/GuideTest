@@ -7,11 +7,12 @@
 import os
 class Config:
     # 项目地址
-    APP_PATH = r"D:\Hyperion\Hyper Brain WELD\HBLicenseMain.exe"
+    APP_PATH = r"D:\APP\Hyperion\Hyper Brain WELD\HBLicenseMain.exe"
     APP_NAME = "HyperBrain.exe"
 
     # 项目根目录
     root_dir = os.path.split(os.path.split(__file__)[0])[0]
+    template_dir = root_dir + os.path.sep + "TempImage"
     test_cases_dir = root_dir + os.path.sep + "TestCases"
     test_datas_dir = root_dir + os.path.sep + "TestDatas"
     test_image_dir = root_dir + os.path.sep + "TempImage"
