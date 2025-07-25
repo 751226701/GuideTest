@@ -237,9 +237,7 @@ class Engineer:
         "assert_test_case_078": r"TempImage/断言/test_case_078.png",
         "assert_test_case_078_1": r"TempImage/断言/test_case_078_1.png",
         "assert_test_case_079": r"TempImage/断言/test_case_079.png",
-        "assert_test_case_079_1": r"TempImage/断言/test_case_079_1.png",
-        
-        
+        "assert_test_case_079_1": r"TempImage/断言/test_case_079_1.png",   
     }
 
     def __init__(self, common_instance=None):
@@ -272,6 +270,10 @@ class Engineer:
         if not image_path:
             raise ValueError(f"未找到图片关键字: {image_key}")
         self.common.input_text(image_path, input_str, operation or f"输入{input_str}", timeout=timeout, **kwargs)
+
+    @allure.step("{operation}")
+    def swipe(self, start_pos, end_pos, operation="", duration=0.5):
+        return self.common.swipe(start_pos, end_pos, operation, duration)
 
     
 

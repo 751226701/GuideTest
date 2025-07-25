@@ -12,7 +12,7 @@ from Common.AllurePretty import PrettyAllure
 from Pages.Engineer import Engineer
 from Common.Common import Common
 
-yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml")).read(slice(71,73))
+yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml")).read(slice(0,79))
 com = Common()
 eng = Engineer(common_instance=com)
 

@@ -5,6 +5,5 @@ __pycache__
 Common/__pycache__
 Config/__pycache__
 Pages/__pycache__
-TestDatas/__pycache__
-TestCases/__pycache__
-TestReport/__pycache__
+__pycache__/
+*.py[cod]

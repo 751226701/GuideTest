@@ -280,7 +280,6 @@
       参数: [ gc_robot_confirm, "点击确定" ]
     - 关键字: assert_exists
       参数: [ assert_test_case_012, "断言已导入ABB机器人IRB1200_5添加成功" ]
-      threshold: 0.95
 
 - 用例编号: test_case_13
   模块: 01 工程
@@ -1609,7 +1608,6 @@
             参数: [ gc_robot_confirm, "点击确定" ]
     - 关键字: assert_exists
       参数: [ assert_test_case_068, "断言导入ABB机器人IRB1200_5成功20次" ]
-      threshold: 0.9
 
 - 用例编号: test_case_69
   模块: 01 工程
@@ -1653,8 +1651,6 @@
   是否执行: Y
   用例标题: 选择机器人后点击取消
   步骤:
-    - 关键字: click
-      参数: [ new , "点击新建" ]
     - 关键字: click
       参数: [ gc , "点击工程" ]
     - 关键字: click
