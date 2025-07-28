@@ -5,6 +5,7 @@
 # @file: Config.py
 # @project: EAI 2.0 GUI_TEST
 import os
+
 class Config:
     # 项目地址
     APP_PATH = r"D:\APP\Hyperion\Hyper Brain WELD\HBLicenseMain.exe"
@@ -12,6 +13,7 @@ class Config:
 
     # 项目根目录
     root_dir = os.path.split(os.path.split(__file__)[0])[0]
+    test_files_dir = root_dir + os.path.sep + "TestFiles"
     template_dir = root_dir + os.path.sep + "TempImage"
     test_cases_dir = root_dir + os.path.sep + "TestCases"
     test_datas_dir = root_dir + os.path.sep + "TestDatas"

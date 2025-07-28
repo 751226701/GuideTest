@@ -26,22 +26,39 @@ def clean_dir(path, patterns):
 def run_pytest(allure_result):
     print("开始执行pytest用例...")
     ret = pytest.main(["-v", "-s", "-p", "no:warnings", f'--alluredir={allure_result}', "--clean-alluredir"])
+
+    exit_codes = {
+        0: "所有测试用例成功通过",
+        1: "有测试用例失败 (FAILED)",
+        2: "测试执行过程中发生错误 (ERROR)",
+        3: "测试被中断 (INTERRUPTED)",
+        4: "测试收集失败 (COLLECTION_FAILED)",
+        5: "测试配置错误 (USAGE_ERROR)"
+    }
+    
+    if ret in exit_codes:
+        print(f"pytest 执行完成，退出码: {ret} - {exit_codes[ret]}")
+    else:
+        print(f"pytest 执行完成，未知退出码: {ret}")
+
     if ret != 0:
-        print(f"pytest 执行失败，退出码: {ret}")
+        print("注意：有测试用例失败，但仍会生成Allure报告以便查看详细失败信息")
+    
     return ret
 
 def generate_allure_report(allure_result, allure_report):
     print("开始生成Allure测试报告...")
-    try:
-        subprocess.run(
-            ["allure", "generate", allure_result, "-o", allure_report, "--clean"],
-            check=True
-        )
+    
+    cmd = f'allure generate "{allure_result}" -o "{allure_report}" --clean'
+    print(f"执行命令: {cmd}")
+    
+    ret = os.system(cmd)
+    if ret == 0:
         print(f"Allure报告已生成: {allure_report}")
-    except FileNotFoundError:
-        print("未找到 allure 命令，请确保已正确安装 Allure 并配置环境变量。")
-    except subprocess.CalledProcessError as e:
-        print(f"Allure报告生成失败: {e}")
+        return True
+    else:
+        print(f"Allure报告生成失败，退出码: {ret}")
+        return False
 
 def main():
     AllureReport = Config.test_report_dir
@@ -49,8 +66,9 @@ def main():
     Screenshot = Config.test_screenshot_dir
 
     clean_dir(Screenshot, ['*.png'])
-    if run_pytest(AllureResult) == 0:
-        generate_allure_report(AllureResult, AllureReport)
+    run_pytest(AllureResult)
+    generate_allure_report(AllureResult, AllureReport)
+    
 
 if __name__ == '__main__':
     main()

@@ -6,6 +6,7 @@
 # @project: EAI 2.0 GUI_TEST
 import yaml
 import os
+import re
 from Config.Config import Config
 
 
@@ -13,12 +14,16 @@ class ReadYaml:
     def __init__(self, filename):
         self.filename = filename
 
+
+
     def read(self, keys=None):
         try:
             with open(self.filename, "r", encoding="utf8") as f:
                 data_yaml = yaml.load(f, Loader=yaml.FullLoader)
         except Exception as e:
             raise RuntimeError(f"读取 YAML 文件失败: {e}")
+
+
 
         if keys is None:
             return data_yaml
@@ -48,7 +53,7 @@ if __name__ == '__main__':
     # 取全部值
     # print(yaml_data.read())
     # 取索引位置值
-    print(yaml_data.read(67))
+    print(yaml_data.read(2))
     # 取切片范围值
     # print(yaml_data.read(slice(0, 2)))
     # 按用例编号取值

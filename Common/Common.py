@@ -178,12 +178,25 @@ class Common:
             self._log_operation(operation, "ASSERT_FAIL", duration, str(e))
             raise AssertionError(f"元素不存在: {image_path}")
 
+    def input_file(self, file_path, operation=""):
+        self.step_counter += 1
+        start_time = time.perf_counter()
+        
+        try:
+            text(file_path)
+            keyevent("{ENTER}")
+            
+            duration = (time.perf_counter() - start_time) * 1000
+            self._log_operation(operation or f"输入文件{file_path}", "SUCCESS", duration)
+            return duration
+        except Exception as e:
+            duration = (time.perf_counter() - start_time) * 1000
+            self._log_operation(operation or f"输入文件{file_path}", "FAILED", duration, str(e))
+            raise
+
     
 
-    @staticmethod
-    def input_file(file_path):
-        text(file_path)
-        keyevent("{ENTER}")
+
 
     @staticmethod
     def run_steps(steps, eng, com):
